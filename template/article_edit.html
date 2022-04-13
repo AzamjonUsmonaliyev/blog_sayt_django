@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div style="position: absolute;margin: 30px 400px; padding: 10px;">
+<h2>Tahrirlash</h2>
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+    {{ form.media }}
+    {{ form|crispy }}
+    <button type="submit" class="btn btn-success">Saqlash</button>
+</form>
+</div>
+{% endblock content %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %} Ro'yhatdan O'tish{% endblock title %}
+{% block content %}
+<div style="position: absolute; margin-left: 50px;">
+<h2>Ro'yhatdan O'tish</h2>
+<form method="post">{% csrf_token %}
+    {{ form|crispy }}
+    <button type="submit" class="btn btn-success">Yuborish</button>
+</form>
+</div>
+{% endblock content %}

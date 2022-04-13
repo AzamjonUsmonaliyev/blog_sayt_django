@@ -1,0 +1,52 @@
+{% extends 'base.html'%}
+
+{% block content %}
+    
+<div style="overflow:auto">
+    
+    <div class="main">
+        <div class="card mb-3">
+            <div class="row g-0">
+              <div class="col-md-4">
+                {% if object.photo %}
+                <img src="{{ object.photo.url }}" alt="{{ object.title }}" style="width: 320px; position: relative; padding: 5px;">
+                {% endif %}
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">{{ object.title }}</h5>
+                  <p class="card-text">{{object.body | safe }}</p>
+                  <p class="card-text"><small class="text-muted">Muallif {{object.author | title }} . {{ object.date }}</small></p>
+                </div>
+                <div class="card">
+                  <div class="card-header">Izohlar</div>
+                  {% for comment in article.comments.all %}
+                    <div class="card-body"> 
+                        <blockquote class="blockquote mb-0">
+                          <h6>{{ comment }}</h6>
+                          <footer class=" blockquote-footer">{{ comment.author}}</footer>
+                        </blockquote>
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+          
+    
+    <div>
+        <a href="{% url 'article_edit' article.pk %}">Tahrirlash</a>
+        <a href="{% url 'article_delete' article.pk %}">O'chirish</a>
+        <a href="{% url 'article_list' %}">Barcha Postlar</a>
+    </div>
+    </div>
+  
+  
+  </div>
+  
+  <div style="background-color:#e5e5e5;text-align:center;padding:10px;margin-top:7px;">azamjonusmon10@gmail.com</div>   
+  
+        
+       
+
+{% endblock content %}
