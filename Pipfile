@@ -4,12 +4,13 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-Django = "*"
+Django = "~=3.1.0"
 django-crispy-forms = "*"
 Pillow = "*"
 django-ckeditor = "*"
 whitenoise = "==5.1.0"
 gunicorn = "==19.9.0"
+pipfile = "*"
 
 [dev-packages]
 
