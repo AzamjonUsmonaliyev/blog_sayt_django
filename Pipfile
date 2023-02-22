@@ -11,7 +11,7 @@ django-ckeditor = "*"
 whitenoise = "==5.1.0"
 gunicorn = "==19.9.0"
 pipfile = "*"
-name="asd"
+
 
 [dev-packages]
 
