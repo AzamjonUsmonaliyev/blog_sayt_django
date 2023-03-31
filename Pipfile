@@ -20,7 +20,7 @@ python_version = "3.8"
 
 [pipenv]
 allow_prereleases = true
-
+# add test
 [packages.environs]
 extras = [ "django",]
 version = "==8.0.0"
